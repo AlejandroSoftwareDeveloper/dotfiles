@@ -33,7 +33,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(gruber-darker))
  '(custom-safe-themes
-   '("e27c9668d7eddf75373fa6b07475ae2d6892185f07ebed037eedf783318761d7" default))
+   '("01a9797244146bbae39b18ef37e6f2ca5bebded90d9fe3a2f342a9e863aaa4fd" "e27c9668d7eddf75373fa6b07475ae2d6892185f07ebed037eedf783318761d7" default))
  '(display-line-numbers 'relative)
  '(package-selected-packages
    '(evil slime-company slime cider vue-mode evil-collection yasnippet-snippets which-key vertico use-package spacemacs-theme solarized-theme scala-mode rust-mode reformatter rainbow-delimiters projectile pkg-info php-mode paredit org-roam-ui org-bullets org-alert orderless minimap marginalia magit lsp-ui inf-elixir hydra gruber-darker-theme geiser-chez emmet-mode elixir-ts-mode elixir-mode eglot doom-modeline dante counsel clang-format avy auto-complete atom-dark-theme all-the-icons affe ada-ts-mode ada-mode 0blayout)))
