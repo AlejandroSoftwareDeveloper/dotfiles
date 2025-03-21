@@ -135,6 +135,7 @@ alias ll='eza -l --icons -a'
 #Aliases variados
 alias vi='nvim'
 alias j='just'
+alias tx='tmux'
 
 
 
