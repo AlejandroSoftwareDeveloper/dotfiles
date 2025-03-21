@@ -1,0 +1,14 @@
+xclip (if $DISPLAY is set)
+xsel (if $DISPLAY is set)
+tmux
+task(taskwarrior)
+taskwarrior-tui
+btop
+htop
+stow
+just(justfile (descargar del repo si no es la ultima actualizacion))
+nvim
+sdkman (para instalar paquetes de java)
+bspwm
+polybar
+httpie

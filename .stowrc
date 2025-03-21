@@ -3,4 +3,5 @@
 --ignore=.gitignore
 --ignore=.git
 --ignore=list.txt
+--ignore=packages.txt
 
