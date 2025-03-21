@@ -2,4 +2,5 @@
 --ignore=.stowrc
 --ignore=.gitignore
 --ignore=.git
+--ignore=list.txt
 
