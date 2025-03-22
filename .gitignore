@@ -7,3 +7,6 @@
 .emacs.d/init.el~
 .emacs.d/myinit.el
 vim/.vimrc
+polybar-collection/.git
+polybar-collection/.gitignore
+
