@@ -1,5 +1,5 @@
 return {
-
+  -- -- Desconmentar para usar (no borrar el plugin)
   -- 'mikavilpas/yazi.nvim',
   -- event = 'VeryLazy',
   -- dependencies = { 'folke/snacks.nvim', lazy = true },
