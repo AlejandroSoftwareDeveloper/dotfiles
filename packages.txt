@@ -12,3 +12,9 @@ sdkman (para instalar paquetes de java)
 bspwm
 polybar
 httpie
+
+paquetes a instalar para 'Tokyo Night Tmux'
+
+```bash
+sudo apt-get install bash bc coreutils gawk git jq playerctl
+```

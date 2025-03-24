@@ -5,4 +5,5 @@
 --ignore=list.txt
 --ignore=packages.txt
 --ignore=vim
+--ignore=packages_configs
 
