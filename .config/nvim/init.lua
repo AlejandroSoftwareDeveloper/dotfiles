@@ -262,14 +262,6 @@ require('lazy').setup({
       },
     },
   },
-  -- Desabilitar para usar la transparencia
-  -- {
-  --   'tribela/transparent.nvim',
-  --   event = 'VimEnter',
-  --   config = true,
-  -- },
-  --
-
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
@@ -632,20 +624,20 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {},
+        -- clangd = {},
         -- gopls = {},
-        pyright = {},
-        volar = {},
-        intelephense = {},
-        rust_analyzer = {
-          settings = {
-            ['rust_analyzer'] = {
-              checkOnSave = {
-                command = 'clippy',
-              },
-            },
-          },
-        },
+        -- pyright = {},
+        -- volar = {},
+        -- intelephense = {},
+        -- rust_analyzer = {
+        --   settings = {
+        --     ['rust_analyzer'] = {
+        --       checkOnSave = {
+        --         command = 'clippy',
+        --       },
+        --     },
+        --   },
+        -- },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -653,8 +645,7 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
-        --
-        elixirls = {},
+        -- elixirls = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -938,6 +929,7 @@ require('lazy').setup({
         'query',
         'vim',
         'vimdoc',
+        'java',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,

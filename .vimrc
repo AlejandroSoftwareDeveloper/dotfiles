@@ -1,6 +1,6 @@
-source $HOME/dotfiles/vim/plugins.vim
-source $HOME/dotfiles/vim/variables.vim
-source $HOME/dotfiles/vim/keybindings.vim
-source $HOME/dotfiles/vim/editoroptions.vim
-source $HOME/dotfiles/vim/othersettings.vim
+source $HOME/.vim/plugins.vim
+source $HOME/.vim/variables.vim
+source $HOME/.vim/keybindings.vim
+source $HOME/.vim/editoroptions.vim
+source $HOME/.vim/othersettings.vim
 

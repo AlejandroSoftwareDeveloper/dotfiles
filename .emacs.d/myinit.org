@@ -132,20 +132,26 @@
 #+END_SRC
 *** Eglot
 #+BEGIN_SRC emacs-lisp 
-      (use-package eglot)
-      (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
-      (add-to-list 'eglot-server-programs '(f90-mode . ("fortls" "--notify_init" "--nthreads=4")))
-      (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
-      (add-to-list 'eglot-server-programs '( rust-mode . ("rust-analyzer" :initializationOptions (:check (:command "clippy")))))
-      (add-hook 'go-mode-hook 'eglot-ensure)
-      (add-hook 'rust-mode-hook 'eglot-ensure)
-      (add-hook 'c-mode-hook 'eglot-ensure)
-      (add-hook 'c++-mode-hook 'eglot-ensure)
-      ;;(define-key eglot-mode-map (kbd "C-c <tab>") #'company-complete) ;initiate the completion manually
-      ;;(define-key eglot-mode-map (kbd "C-c e f n") #'flymake-goto-next-error)
-      ;;(define-key eglot-mode-map (kbd "C-c e f p") #'flymake-goto-prev-error)
-      ;;(define-key eglot-mode-map (kbd "C-c e r") #'eglot-rename)
-      ;;(define-key eglot-mode-map (kbd "C-c C-a") #'eglot-format-buffer)
+  (use-package eglot)
+  (add-to-list 'eglot-server-programs '(f90-mode . ("fortls" "--notify_init" "--nthreads=4")))
+  (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
+  (add-hook 'c-mode-hook 'eglot-ensure)
+  (add-hook 'c++-mode-hook 'eglot-ensure)
+  ;;lsp disactivados
+  ;;go
+  ;;(add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
+  ;;(add-hook 'go-mode-hook 'eglot-ensure)
+
+  ;;rust
+  ;;(add-to-list 'eglot-server-programs '( rust-mode . ("rust-analyzer" :initializationOptions (:check (:command "clippy")))))
+  ;;(add-hook 'rust-mode-hook 'eglot-ensure)
+
+  ;;Atajos de teclados para eglot
+  ;;(define-key eglot-mode-map (kbd "C-c <tab>") #'company-complete) ;initiate the completion manually
+  ;;(define-key eglot-mode-map (kbd "C-c e f n") #'flymake-goto-next-error)
+  ;;(define-key eglot-mode-map (kbd "C-c e f p") #'flymake-goto-prev-error)
+  ;;(define-key eglot-mode-map (kbd "C-c e r") #'eglot-rename)
+  ;;(define-key eglot-mode-map (kbd "C-c C-a") #'eglot-format-buffer)
 #+END_SRC
 *** Magit
 #+BEGIN_SRC emacs-lisp 
