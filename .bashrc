@@ -134,6 +134,8 @@ alias vi='nvim'
 alias j='just'
 alias tx='tmux'
 alias tns='tmux new -s'
+alias bat="batcat"
+
 
 # alis yazi taskwarrior
 alias yz='yazi'
@@ -148,6 +150,7 @@ export PATH="$PATH:/opt/nvim/"
 export PATH="$PATH:/opt/midori/"
 export PATH="$PATH:/home/dark/yazi"
 export PATH="$PATH:/home/dark/taskwarrior-tui"
+export PATH="$PATH:/usr/bin/batcat"
 export NVM_DIR="$HOME/.nvm"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -167,3 +170,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64/"
 export PATH=$JAVA_HOME/bin:$PATH
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+
