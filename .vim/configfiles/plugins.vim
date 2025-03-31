@@ -41,7 +41,7 @@ call plug#begin('~/.vim/plugged')
    Plug 'jpalardy/vim-slime'
    
 
-   source $HOME/dotfiles/.vim/uninstalled_plugins.vim
+   source $HOME/dotfiles/.vim/configfiles/uninstalled_plugins.vim
 
 call plug#end()
 

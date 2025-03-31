@@ -168,10 +168,7 @@ eval "$(starship init bash)"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64/"
-export PATH=$JAVA_HOME/bin:$PATH
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 
 

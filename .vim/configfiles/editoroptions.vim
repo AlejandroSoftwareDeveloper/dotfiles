@@ -60,6 +60,7 @@ set tabstop=4
 set softtabstop=4
 set autoindent
 set ignorecase       "Ignora las mayusculas en las busquedas
+
 " Opciones para gvim activar y desactivar las barras de navegacion  
 set guioptions-=T
 set guioptions-=r

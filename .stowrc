@@ -5,4 +5,5 @@
 --ignore=list.txt
 --ignore=packages.txt
 --ignore=packages_configs
+--ignore=tmux_dev_scripts
 
