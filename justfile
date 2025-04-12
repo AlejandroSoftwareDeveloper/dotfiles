@@ -16,7 +16,7 @@ st:
 
 # Adicion de submodulos
 gasm httproute pcroute: 
-    git submodules add {{ httproute }} {{ pcroute }}
+    git submodule add {{ httproute }} {{ pcroute }}
 
 # Inicializa los submodulos
 fetch-packs:
