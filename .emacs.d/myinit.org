@@ -211,7 +211,6 @@
 	:ensure t)
     (add-hook 'after-init-hook 'global-company-mode)
     (setq eldoc-echo-area-use-multiline-p nil)
-
 #+END_SRC
 *** Marginalia
 #+BEGIN_SRC emacs-lisp

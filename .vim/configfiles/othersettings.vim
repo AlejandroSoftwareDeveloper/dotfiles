@@ -56,11 +56,6 @@ augroup filetypedetect
 augroup END
 nnoremap <silent> <C-q> :Bdelete menu:<:<nop> <nop> <nop> <nop> <nop> <nop> cr>
 
-" Modo del cursor en la terminal
-let &t_SI = "\e[6 q"
-let &t_SR = "\e[4 q"
-let &t_EI = "\e[2 q"
-
 " Validar como se usa correctamente
 "autocmd FileType html set 
 "omnifunc=htmlcomplete#CompleteTags

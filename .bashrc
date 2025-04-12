@@ -123,6 +123,10 @@ alias djapp="uv run manage.py"
 # eza alias
 alias la='eza -1 -X --icons --group-directories-first -a'
 alias ll='eza -l --icons -a'
+alias lat='la -T --level=2'
+
+# alias python
+alias py="ipython"
 
 # some more ls aliases
 # alias ll='ls -alF'
@@ -159,10 +163,6 @@ export PATH="/home/dark/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/dark/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 
  
-# eval "$(oh-my-posh init bash --config '/home/dark/.cache/oh-my-posh/themes/space.omp.json')"
-eval "$(zoxide init bash --cmd cd)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-eval "$(starship init bash)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -171,4 +171,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# eval "$(oh-my-posh init bash --config '/home/dark/.cache/oh-my-posh/themes/space.omp.json')"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(starship init bash)"
+eval "$(zoxide init bash --cmd cd)"
 

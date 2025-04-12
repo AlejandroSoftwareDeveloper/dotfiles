@@ -1,14 +1,3 @@
-nmap <silent><CR><CR> :bnext<CR>
-nmap <silent><BS><BS> :bprev<CR>
-" nnoremap all ggVG    " Para trabajar con scheme
-
-" map <F4> :Lex! <bar> vertical resize 60 <CR>
-"Se puede abreviar    vert     bot      term
-"o
-" nnoremap <F5> :wa <CR> :vert bot term ++kill=term<CR> 
-" nnoremap <silent><F4> :wa \| vertical botright term ++kill=term<CR>   "
-" Ultima version antes de usar F4
-
 map <silent><leader>rc :e $RC<CR> 
 map <silent><leader>so :source $RC<CR>
 map <leader>u  :UndotreeShow<CR>
@@ -23,15 +12,9 @@ map tc :tabclose<CR>
 map tn :tabnext<CR>
 map tp :tabprev<CR>
 
-" CtrlP
-nnoremap <silent><F9> :CtrlP<CR> 
-nnoremap <silent><F10> :CtrlPBuffer<CR> 
-
-" FZF
-" nnoremap <silent><F9> :Files<CR> 
-" nnoremap <silent><F10> :Lines<CR>
-" nnoremap <silent><F11> :Buffers<CR>
-
+" Para limpiar todos los buffers
+map <leader>cb :%bd\|e#<cr>
+"
 "Para modo normal
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
@@ -39,6 +22,7 @@ nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 inoremap jk <Esc> 
+
 "Para modo visual
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
@@ -55,6 +39,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-h> <C-w>h
 
 nnoremap <C-s> <cmd>w<CR>
+" No uso la ventana horizontal nunca
 " nnoremap <silent><C-Up> :resize -2 <CR>
 " nnoremap <silent><C-Down> :resize +2 <CR>
 nnoremap <silent><C-Left> :vertical resize -2 <CR>
@@ -70,4 +55,3 @@ nnoremap <silent><F4> :wa \| vertical botright term ++kill=term<CR>
 " Reseteo del motor de sintaxis
 nnoremap <F12><ESC>:syntax sync fromstart<CR>
 inoremap <F12><C-o>:syntax sync fromstart<CR>
-

@@ -29,3 +29,12 @@ Para instalar el gestor de paquetes de tmux
    git clone https://github.com/tmux-plugins/tpm/ ~/.tmux/plugins/tpm
 ```
 
+Para correr fd  (tener instalado fzf, tmux y vim o neovim dependiendo del editor que se vaya a usar)
+```bash
+   sudo apt install fd-find
+
+   # Hay que adicionar $HOME/.local/bin al .bashrc si no existe
+   # Luego ejecuto
+   ln -s $(which fdfind) ~/.local/bin/fd
+```
+

@@ -11,6 +11,7 @@ config.color_scheme = "Tokyo Night"
 config.font = wezterm.font_with_fallback({
 	{ family = "JetBrains Mono", scale = 1.1 },
 })
+-- Para el control de la transparencia
 config.window_background_opacity = 0.9
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"

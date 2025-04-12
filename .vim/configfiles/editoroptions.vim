@@ -1,4 +1,3 @@
-"
 " Senalizador de sintasys
 syntax on
 filetype indent plugin on
@@ -10,10 +9,10 @@ set background=dark
 set termguicolors
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
-
 colorscheme tokyonight
 
 " colorscheme  PaperColor " Antiguo esquema de colores
+
 highlight Pmenu ctermbg=8 ctermfg=0
 highlight Pmenusel ctermbg=15 ctermfg=0
 
@@ -69,4 +68,9 @@ set guioptions-=m
 set scrolloff=8
 set nowrap
 " set cmdheight=2
+
+" Modo del cursor en la terminal
+let &t_SI = "\e[6 q"
+let &t_SR = "\e[4 q"
+let &t_EI = "\e[2 q"
 

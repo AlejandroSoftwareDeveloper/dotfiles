@@ -9,15 +9,16 @@ vol level:
 sdot:
    stow --adopt .
 
-# Agrega al archivos al local ignore de stow (ejemplo)
-#add-tl:
-#    echo "justfile"  >> .stow-local-ignore
-#    echo "wezterm" >> .stow-local-ignore
-#    echo "tags" >> .stow-local-ignore
+# Inicializar los submodulos de mi configuracion de vim
+# subinit: 
+st:
+    @git status
 
-# Genera los dotfiles
-# stow-all: sdot
-#    stow --adopt .config
+# Inicializa los submodulos
+fetch-packs:
+	git submodule init
+	git submodule update
 
-
-
+## make update-packs :: updates the plugins
+update-packs:
+	git submodule update --remote
