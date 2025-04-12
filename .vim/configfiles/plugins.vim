@@ -23,7 +23,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'ghifarit53/tokyonight-vim'
     Plug 'junegunn/fzf',{'do':{ -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    
+    Plug 'mattn/emmet-vim'
+    Plug 'jpalardy/vim-slime'
+    Plug 'editorconfig/editorconfig-vim' 
+    Plug 'junegunn/goyo.vim'
    " Plug 'w0rp/ale'
    " Plug 'dense-analysis/ale'
    "
@@ -31,7 +34,5 @@ call plug#begin('~/.vim/plugged')
    " Plug 'prabirshrestha/vim-lsp'
    " Plug 'mattn/vim-lsp-settings'
    " Plug 'kovisoft/slimv'
-   " Plug 'jpalardy/vim-slime'
 
 call plug#end()
-
