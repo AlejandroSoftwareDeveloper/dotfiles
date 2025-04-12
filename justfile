@@ -14,6 +14,10 @@ sdot:
 st:
     @git status
 
+# Adicion de submodulos
+gasm httproute pcroute: 
+    git submodules add {{ httproute }} {{ pcroute }}
+
 # Inicializa los submodulos
 fetch-packs:
 	git submodule init
