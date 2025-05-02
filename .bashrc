@@ -110,15 +110,16 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-. "$HOME/.cargo/env"
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
-
 
 # Created by `pipx` on 2024-10-27 00:22:31
 alias cls="clear"
 alias django="uv run django-admin"
 alias djapp="uv run manage.py"
+
+# Scala 
+alias sc="scala"
 
 # eza alias
 alias la='eza -1 -X --icons --group-directories-first -a'
@@ -140,7 +141,6 @@ alias tx='tmux'
 alias tns='tmux new -s'
 alias bat="batcat"
 
-
 # alis yazi taskwarrior
 alias yz='yazi'
 alias twt='taskwarrior-tui'
@@ -155,6 +155,7 @@ export PATH="$PATH:/opt/midori/"
 export PATH="$PATH:/home/dark/yazi"
 export PATH="$PATH:/home/dark/taskwarrior-tui"
 export PATH="$PATH:/usr/bin/batcat"
+export PATH="$PATH:/home/dark/.nvm/versions/node/v22.15.0/bin/"
 export NVM_DIR="$HOME/.nvm"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -162,11 +163,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/home/dark/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/dark/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 
- 
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -176,3 +173,9 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init bash)"
 eval "$(zoxide init bash --cmd cd)"
 
+. "$HOME/.cargo/env"
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

@@ -8,8 +8,9 @@ ctrl + shift + Return
 
 # terminal emulator
 super + Return
-     wezterm
-     #xfce4-terminal
+     st
+     # wezterm
+     # xfce4-terminal
 
 # program launcher
 super + @space

@@ -14,7 +14,8 @@ map tp :tabprev<CR>
 
 " Para limpiar todos los buffers
 map <leader>cb :%bd\|e#<cr>
-"
+map <silent><C-q> :bdelete!<cr>
+
 "Para modo normal
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
