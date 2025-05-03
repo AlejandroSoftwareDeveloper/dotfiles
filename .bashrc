@@ -165,7 +165,7 @@ export PHP_INI_SCAN_DIR="/home/dark/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 
 
 
-
+feh --bg-fill ~/wall/WallPaper1.png
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # eval "$(oh-my-posh init bash --config '/home/dark/.cache/oh-my-posh/themes/space.omp.json')"

@@ -1,0 +1,103 @@
+
+# En el archivo config.def.h cambiar:
+# static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+# por:
+# static char *font = "Liberation Mono:size=13:antialias=true:autohint=true";
+
+base_url  := "https://st.suckless.org/patches/"
+
+#Listar comandos
+default:
+    @just --list
+
+# Descarga de st
+st:
+    @echo Descargando st 
+    @git clone https://git.suckless.org/st
+    @echo Descarga finalizada
+
+# Descarga de dwm
+dwm:
+    @echo Descargando dwm 
+    @git clone https://git.suckless.org/dwm
+    @echo Descarga finalizada
+
+# Descarga de dmenu
+dmenu:
+    @echo Descargando dmenu 
+    @git clone https://git.suckless.org/dmenu
+    @echo Descarga finalizada
+
+# Descarga los parches de st e instala
+
+create_st_patch_folder:
+    mkdir st/patches/
+
+# Descarga los parches que uso en sys
+download_st_patches: 
+    wget {{base_url}}alpha/st-alpha-20240814-a0274bc.diff
+    wget https://st.suckless.org/patches/dracula/st-dracula-0.8.5.diff
+
+move_to_st:
+    mv st-alpha-20240814-a0274bc.diff st/
+    mv st-dracula-0.8.5.diff st/
+
+
+# Descarga e instala los patch de st
+install_custom_st_patches: create_st_patch_folder download_st_patches 
+    just move_to_st
+
+# Compila st
+compile_st:
+    @echo COMPILANDO "st"
+    @just --justfile justfile --working-directory st    clean_install
+    @echo COMPILACION DE "st" TERMINADA
+
+# Compila dmenu
+compile_dmenu:
+    @echo COMPILANDO "dmenu"
+    @just --justfile justfile --working-directory dmenu clean_install
+    @echo COMPILACION DE "dmenu" TERMINADA
+
+# Compila dwm
+compile_dwm:
+    @echo COMPILANDO "dwm"
+    @just --justfile justfile --working-directory dwm   clean_install
+    @echo COMPILACION DE "dwm" TERMINADA
+
+# Ejecuta la compilacion de los proyectos
+compile: compile_st compile_dmenu compile_dwm 
+    @echo TODOS LOS SISTEMAS FINALIZARON
+
+# Descarga e instala todos los parches de st (dmenu, dwm pendiente)
+patch: install_custom_st_patches
+    @echo TODOS LOS PARCHES SE DESCARGARON Y SE INSTALARON
+    
+# Limpiar los projectos y los compila
+clean_install:
+   sudo make clean install 
+
+# Descarga las dependencias de suckless y las instalas
+suckless: st dwm dmenu patch compile 
+    @echo DESCARGADAS E INSTALADAS TODAS LAS DEPENDENCIAS BASICAS
+
+# Recompila el st
+rst:
+    rm st/config.h
+    just compile_st
+
+# Recompila el dwm
+rdwm:
+    rm dwm/config.h
+    just compile_dwm
+
+# Edita y compila st
+est:
+    vim st/config.def.h
+    just rst
+
+# Descarga las dependencias de suckless y las instala
+suckless_st: st patch compile_st
+    @echo DESCARGADAS E INSTALADAS TODAS LAS DEPENDENCIAS BASICAS
+
+
