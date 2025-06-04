@@ -18,30 +18,34 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-endwise'
     Plug 'elixir-editors/vim-elixir'
     Plug 'Asheq/close-buffers.vim'
-    Plug 'airblade/vim-gitgutter'
+    Plug 'airblade/vim-gitgutter' 
     Plug 'preservim/nerdtree'
     Plug 'ghifarit53/tokyonight-vim'
     Plug 'junegunn/fzf'           , {'do':{ -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'mattn/emmet-vim'
     Plug 'jpalardy/vim-slime'
-    Plug 'editorconfig/editorconfig-vim' 
     Plug 'junegunn/goyo.vim'
+    
+    "  Svelte
+    Plug 'leafOfTree/vim-svelte-plugin'
+    
+    " React
+    Plug 'mxw/vim-jsx'
 
     "Para ada
     Plug 'thindil/vim-ada'         , { 'for' : 'adb' }
     Plug 'thindil/a.vim'
-    Plug 'thindil/Ada-Bundle'
+    " Plug 'thindil/Ada-Bundle'
     Plug 'thindil/vim-xml'
 
     " Editor config
     Plug 'editorconfig/editorconfig-vim'
 
-
     " Pascal
-    Plug 'skywind3000/asyncrun.vim'  " For async make 
-    Plug 'godlygeek/tabular',        " For aligning    
-    Plug 'mattia72/vim-delphi' 
+    " Plug 'skywind3000/asyncrun.vim'  " For async make 
+    " Plug 'godlygeek/tabular',        " For aligning    
+    " Plug 'mattia72/vim-delphi' 
     " Plug 'Shougo/neosnippet'         " For snippet support   
 
    " Plug 'w0rp/ale'

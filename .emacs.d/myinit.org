@@ -97,11 +97,9 @@
   (setq org-agenda-files '("D:\\Literatura\ y\ Videotutoriales\\Base\ de\ conocimiento\\Task.org"))
   (setq org-ellipsis " ⌄"
 	org-hide-emphasis-markers t))
-
 (use-package org-bullets
   :after org
   :hook (org-mode . org-bullets-mode))
-
 #+END_SRC
 *** Configuraciones de teclado
 #+BEGIN_SRC emacs-lisp 
@@ -132,13 +130,15 @@
 #+END_SRC
 *** Eglot
 #+BEGIN_SRC emacs-lisp 
-  (use-package eglot)
-  (add-to-list 'eglot-server-programs '(f90-mode . ("fortls" "--notify_init" "--nthreads=4")))
-  (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
-  (add-hook 'c-mode-hook 'eglot-ensure)
-  (add-hook 'c++-mode-hook 'eglot-ensure)
-  ;;lsp disactivados
-  ;;go
+  ;; TODOS LOS LSP ESTAN DESACTIVADOS
+  ;;(use-package eglot)
+  ;;(add-to-list 'eglot-server-programs '(f90-mode . ("fortls" "--notify_init" "--nthreads=4")))
+  ;;(add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
+  ;;(add-hook 'c-mode-hook 'eglot-ensure)
+  ;;(add-hook 'c++-mode-hook 'eglot-ensure)
+
+  
+  ;;GO
   ;;(add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
   ;;(add-hook 'go-mode-hook 'eglot-ensure)
 
@@ -205,7 +205,7 @@
  :custom
  (completion-styles '(orderless)))
 #+END_SRC
-*** Conpany mode
+*** Company mode
 #+BEGIN_SRC emacs-lisp 
     (use-package company
 	:ensure t)

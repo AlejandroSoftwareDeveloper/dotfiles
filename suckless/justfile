@@ -33,6 +33,11 @@ dmenu:
 create_st_patch_folder:
     mkdir st/patches/
 
+
+#Ejecuta un commando en la localizacion deseada
+compile_in_folder folder command:
+    @just --justfile justfile --working-directory  {{ folder }} {{ command }}
+
 # Descarga los parches que uso en sys
 download_st_patches: 
     wget {{base_url}}alpha/st-alpha-20240814-a0274bc.diff
@@ -50,19 +55,19 @@ install_custom_st_patches: create_st_patch_folder download_st_patches
 # Compila st
 compile_st:
     @echo COMPILANDO "st"
-    @just --justfile justfile --working-directory st    clean_install
+    @just compile_in_folder suckless_programs/st clean_install
     @echo COMPILACION DE "st" TERMINADA
 
 # Compila dmenu
 compile_dmenu:
     @echo COMPILANDO "dmenu"
-    @just --justfile justfile --working-directory dmenu clean_install
+    @just --justfile justfile --working-directory suckless_programs/dmenu clean_install
     @echo COMPILACION DE "dmenu" TERMINADA
 
 # Compila dwm
 compile_dwm:
     @echo COMPILANDO "dwm"
-    @just --justfile justfile --working-directory dwm   clean_install
+    @just --justfile justfile --working-directory suckless_programs/dwm  clean_install
     @echo COMPILACION DE "dwm" TERMINADA
 
 # Ejecuta la compilacion de los proyectos
