@@ -1,5 +1,4 @@
 -- Configuracion de kickstart.nvim
---
 
 require 'custom.keymaps'
 
@@ -23,6 +22,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   'tpope/vim-sleuth',
+  -- Aqui van los otros pluggins
+
+  -- Plugins basicos de kickstart
   require 'custom.plugins.kickstart.gitsigns',
   require 'custom.plugins.kickstart.whichkey',
   require 'custom.plugins.kickstart.telescope',
@@ -97,6 +99,7 @@ require('lazy').setup({
         'vim',
         'vimdoc',
         'java',
+        'asm',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
