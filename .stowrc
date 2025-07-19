@@ -1,4 +1,3 @@
---ignore=justfile
 --ignore=.stowrc
 --ignore=.gitignore
 --ignore=.git

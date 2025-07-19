@@ -153,13 +153,6 @@
   ;;(define-key eglot-mode-map (kbd "C-c e r") #'eglot-rename)
   ;;(define-key eglot-mode-map (kbd "C-c C-a") #'eglot-format-buffer)
 #+END_SRC
-*** Magit
-#+BEGIN_SRC emacs-lisp 
-(use-package magit
-  :defer 0
-  :custom
-  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
-#+END_SRC
 *** Yasnippet
 #+BEGIN_SRC emacs-lisp 
   (use-package yasnippet-snippets
@@ -226,15 +219,6 @@
     ;; enabled right away. Note that this forces loading the package.
    (marginalia-mode))
 #+END_SRC
-*** Affe
-#+BEGIN_SRC emacs-lisp
-  ;;Buscador fuzzy finder
-  (use-package affe
-    :ensure t
-    :config
-    ;; Manual preview key for `affe-grep'
-    (consult-customize affe-grep :preview-key (kbd "C-M-.")))
-#+END_SRC
 *** Consult
 #+BEGIN_SRC emacs-lisp
 	(use-package consult)
@@ -260,9 +244,4 @@
   ;; (require 'c3-ts-mode)
 #+END_SRC
 
-*** Slime (Common Lisp)
-#+BEGIN_SRC emacs-lisp slime_config
-  (setq inferior-lisp-program "sbcl")
-  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-#+END_SRC
 		
