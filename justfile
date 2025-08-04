@@ -29,12 +29,48 @@ fetch-packs:
 	git submodule init
 	git submodule update
 
-## make update-packs :: updates the plugins
+# Make update-packs :: updates the plugins
 [linux]
 update-packs:
 	git submodule update --remote
 
-## make update-packs :: updates the plugins
+# Limpia la cache del sistema operativo
 [linux]
 clean-cache:
 	rm -rf ~/.cache/
+
+# Inicializa el servicio de postgresql
+[linux]
+start-postgresql:
+	@sudo systemctl start postgresql.service
+
+# Habilita el servicio de postgresql
+[linux]
+enable-postgresql:
+	@sudo systemctl enable postgresql.service
+
+# Muestra el estado del servicio de postgresql
+[linux]
+status-postgresql:
+	@sudo systemctl status postgresql.service
+
+# Detiene el servicio de postgresql
+[linux]
+stop-postgresql:
+	@sudo systemctl stop postgresql.service
+
+
+# Lista los paquetes a instalar en el sistema operativo al instalar la  distro
+[linux]
+untar file:
+	@tar -xvf {{file}}
+
+# Lista los paquetes a instalar en el sistema operativo al instalar la  distro
+# [linux]
+# pack-list:
+# 	@echo "-- Package 1"
+# 	@echo "-- Package 3"
+# 	@echo "-- Package 4"
+# 	@echo "-- Package 5"
+
+
