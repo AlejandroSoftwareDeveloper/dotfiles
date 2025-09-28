@@ -129,11 +129,6 @@ alias lat='la -T --level=2'
 # alias python
 alias py="ipython"
 
-# some more ls aliases
-# alias ll='ls -alF'
-# alias la='ls -A'
-# alias l='ls -CF'
-
 #Aliases variados
 alias vi='nvim'
 alias j='just'
@@ -155,7 +150,9 @@ export PATH="$PATH:/opt/midori/"
 export PATH="$PATH:/home/dark/yazi"
 export PATH="$PATH:/home/dark/taskwarrior-tui"
 export PATH="$PATH:/usr/bin/batcat"
+export PATH="$PATH:/usr/bin/typst"
 export PATH="$PATH:/home/dark/.nvm/versions/node/v22.15.0/bin/"
+export PATH="$PATH:/usr/local/go/bin"
 export NVM_DIR="$HOME/.nvm"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -163,7 +160,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/home/dark/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/dark/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 
-
+PATH=~/.console-ninja/.bin:$PATH
 
 feh --bg-fill ~/wall/WallPaper1.png
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -175,11 +172,10 @@ eval "$(zoxide init bash --cmd cd)"
 
 . "$HOME/.cargo/env"
 
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)

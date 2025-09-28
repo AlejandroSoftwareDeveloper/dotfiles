@@ -12,22 +12,24 @@ vim.pack.add({
 	{ src = "https://github.com/echasnovski/mini.diff" },
 	{ src = "https://github.com/echasnovski/mini.pick" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-	-- { src = "https://github.com/neovim/nvim-lspconfig" },
-	-- { src = "https://github.com/echasnovski/mini.ai" },
-	-- { src = "https://github.com/echasnovski/mini.extra" },
-	{ src = "https://github.com/echasnovski/mini.statusline" },
+    { src = 'https://github.com/neovim/nvim-lspconfig' },
+    { src = 'https://github.com/L3MON4D3/LuaSnip' },
+	{ src = 'https://github.com/mason-org/mason.nvim' },
+	{ src = 'https://github.com/mason-org/mason-lspconfig.nvim' },
+	{ src = 'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim' },
+	{ src = 'https://github.com/nvim-lualine/lualine.nvim' },
 })
-require("oil").setup({
-	view_options = {
-		show_hidden = true,
-	},
-})
+
+
 require("mini.pick").setup({})
 require("mini.diff").setup({})
 require("mini.extra").setup({})
-require("mini.files").setup({}) --configurar
-require("mini.statusline").setup({})
+require("mini.files").setup({}) -- configurar
+require("lualine").setup({})
 require("nvim-treesitter.configs").setup({ 
+    -- Autoinstall languages that are not installed
+    auto_install = true,
+
     highlight = {
         enable = true,
     },
@@ -35,18 +37,34 @@ require("nvim-treesitter.configs").setup({
     ensure_installed = {
         'python',
         'lua',
-        -- 'bash',
-        -- 'c',
+        'bash',
+        'c',
+        'html',
+        'asm',
         -- 'diff',
-        -- 'html',
         -- 'luadoc',
-        -- 'asm',
       },
-      -- Autoinstall languages that are not installed
-      auto_install = true,
 })
 
--- vim.lsp.enable({ "lua_ls", "pyright" })
+require("oil").setup({
+	view_options = {
+		show_hidden = true,
+	},
+})
+
+require("mason").setup({})
+require("mason-lspconfig").setup({})
+require("mason-tool-installer").setup({
+    ensure_installed = {
+        "pyright",
+        "lua_ls",
+        "stylua",
+    }
+})
+require('luasnip').setup({ enable_autosnippets = true })
+require('luasnip.loaders.from_lua').load({ paths = '~/.config/nvim/snippets/' })
+
+vim.lsp.enable({ "lua_ls", "pyright" }) -- Para activar el hover C-w C-d
 vim.cmd.colorscheme("tokyonight-night")
 
 -- Descomentar para poner un background
@@ -78,6 +96,7 @@ vim.o.incsearch = true -- Muestra resultado mientras tecleas
 
 -- Ajustes visuales
 vim.o.syntax = "ON" -- Activa el visualizador sintactico
+vim.o.winborder = "rounded" -- Activa bordes de las ventanas flotantes
 vim.o.termguicolors = true -- Habilita los 24-bit de colores
 vim.o.signcolumn = "yes" -- Muestra siempre la columna de simbolos
 vim.o.showmatch = true -- Muestra las llaves, parentesis, y corchetes de cierre
@@ -102,22 +121,19 @@ vim.o.hidden = true -- Permite los buffers ocultos
 vim.o.errorbells = false -- Desactivada la campana de errores
 vim.o.backspace = "indent,eol,start" -- Desactivada la campana de errores
 vim.o.mouse = "a" -- Activa el mouse
+
 -- Tecla leader
 vim.g.mapleader = " "
 
 -- Atajos de teclados
 vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>", { desc = "Elimina la senalizacion de busqueda", silent = true })
-vim.keymap.set(
-	"n",
-	"<C-o>",
-	":update<CR> :source<CR>",
-	{ desc = "Actualiza y recarga el archivo de configuracion", silent = true }
-)
+vim.keymap.set( "n", "<C-o>", ":update<CR> :source<CR>",
+	{ desc = "Actualiza y recarga el archivo de configuracion", silent = true })
 vim.keymap.set("n", "<C-s>", ":write<CR>")
 vim.keymap.set("n", "<C-q>", ":quit<CR>")
 
--- Atajos de movimeino keymaps
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window", silent = true })
+-- Atajos de movimiento keymaps
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window",  silent = true })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window", silent = true })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window", silent = true })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window", silent = true })
@@ -132,41 +148,35 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Navega hacia abajo y centra el
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Navega hacia arriba y centra el contenido.", silent = true })
 
 -- Mueve las lineas arriba y abajo
-vim.keymap.set(
-	"n",
-	"<A-j>",
-	":m .+1<CR>==",
-	{ desc = "Nueve el contenido de la linea hacia abajo (modo normal)", silent = true }
+vim.keymap.set( "n", "<A-j>", ":m .+1<CR>==",
+	{ desc = "Mueve el contenido de la linea hacia abajo (modo normal)", silent = true }
 )
-vim.keymap.set(
-	"n",
-	"<A-k>",
-	":m .-2<CR>==",
-	{ desc = "Nueve el contenido de la linea hacia arriba (modo normal)", silent = true }
+
+vim.keymap.set( "n", "<A-k>", ":m .-2<CR>==",
+	{ desc = "Mueve el contenido de la linea hacia arriba (modo normal)", silent = true }
 )
-vim.keymap.set(
-	"v",
-	"<A-j>",
-	":m '>+1<CR>gv=gv",
-	{ desc = "Nueve el contenido de la linea hacia abajo (modo visual)", silent = true }
+
+vim.keymap.set( "v", "<A-j>", ":m '>+1<CR>gv=gv",
+	{ desc = "Mueve el contenido de la linea hacia abajo (modo visual)", silent = true }
 )
-vim.keymap.set(
-	"v",
-	"<A-k>",
-	":m '<-2<CR>gv=gv",
-	{ desc = "Nueve el contenido de la linea hacia arriba (modo visual)", silent = true }
+
+vim.keymap.set( "v", "<A-k>", ":m '<-2<CR>gv=gv",
+	{ desc = "Mueve el contenido de la linea hacia arriba (modo visual)", silent = true }
 )
 
 -- Identado a la derecha e izquierda
-vim.keymap.set("v", "<", "<gv", { desc = "Nueve el contenido de la linea hacia arriba (modo normal)", silent = true })
-vim.keymap.set("v", ">", ">gv", { desc = "Nueve el contenido de la linea hacia abajo (modo normal)", silent = true })
+vim.keymap.set("v", "<", "<gv", { desc = "Mueve el contenido de la linea hacia arriba (modo normal)", silent = true })
+vim.keymap.set("v", ">", ">gv", { desc = "Mueve el contenido de la linea hacia abajo (modo normal)", silent = true })
 
 -- Navegacion de buffers
 vim.keymap.set("n", "<Tab>", ":bnext <CR>", { desc = "Navega hacia el proximo buffer.", silent = true })
 vim.keymap.set("n", "<S-Tab>", ":bprev<CR>", { desc = "Navega hacia el buffer anterior.", silent = true })
 vim.keymap.set("n", "<leader>b", ":Pick buffers<CR>", { desc = "Muestra la lista de buffers.", silent = true })
 
--- Remplaza todas las coincidencias en el archivo actual
+-- Eliminacion de buffers excepto el actual
+vim.keymap.set({"n","i","v"}, "<leader>wq", ":%bd|e# <CR>", { desc = "Cierra todos los buffers excepto el actual.", silent = true })
+
+-- Reemplaza todas las coincidencias en el archivo actual
 vim.keymap.set("v", "<leader>r", '"hy:%s/<C-r>h//g<left><left>')
 
 -- Sale del modo insercion sin presionar escape
@@ -185,6 +195,7 @@ vim.keymap.set("i", "/*", "/**/<left><left>")
 -- Atajos de teclados
 vim.keymap.set("n", "-", ":Oil<CR>", { silent = true })
 vim.keymap.set("n", "<leader>e", ":lua MiniFiles.open()<CR>", { silent = true })
+
 -- Version de miniextra
 -- vim.keymap.set('n','<leader>f',':lua MiniExtra.pickers.explorer()<CR>',{silent = true})
 vim.keymap.set("n", "<leader>f", ":Pick files<CR>", { silent = true })
@@ -192,3 +203,17 @@ vim.keymap.set("n", "<Leader>h", ":Pick help<CR>", { silent = true })
 
 -- vim commands
 -- vim.cmd(":hi statusline guibg=NONE")
+
+-- Lua Snippets
+-- Terminar despues 
+local ls = require('luasnip')
+
+vim.keymap.set({"i"}, "<Tab>", function() ls.expand() end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-L>", function() ls.jump( 1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-J>", function() ls.jump(-1) end, {silent = true})
+
+vim.keymap.set({"i", "s"}, "<C-E>", function() 
+	if ls.choice_active() then
+		ls.change_choice(1)
+	end
+end, {silent = true})

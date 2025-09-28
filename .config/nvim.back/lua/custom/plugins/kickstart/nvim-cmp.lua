@@ -14,7 +14,6 @@ return { -- Autocompletion
       dependencies = {},
     },
     'saadparwaiz1/cmp_luasnip',
-
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
   },
@@ -30,13 +29,13 @@ return { -- Autocompletion
       },
       completion = { completeopt = 'menu,menuone,noinsert' },
       mapping = cmp.mapping.preset.insert {
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<CR>'] = cmp.mapping.confirm { select = true },
-        ['<Tab>'] = cmp.mapping.select_next_item(),
-        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+        ['<C-b>']     = cmp.mapping.scroll_docs(-4),
+        ['<C-f>']     = cmp.mapping.scroll_docs(4),
+        ['<CR>']      = cmp.mapping.confirm { select = true },
+        ['<Tab>']     = cmp.mapping.select_next_item(),
+        ['<S-Tab>']   = cmp.mapping.select_prev_item(),
         ['<C-Space>'] = cmp.mapping.complete {},
-        ['<C-l>'] = cmp.mapping(function()
+        ['<C-l>']     = cmp.mapping(function()
           if luasnip.expand_or_locally_jumpable() then
             luasnip.expand_or_jump()
           end

@@ -73,4 +73,13 @@ untar file:
 # 	@echo "-- Package 4"
 # 	@echo "-- Package 5"
 
+# Comando para inicializar el reparador de disco de gnome
+[linux]
+gd:
+	@sudo gnome-disks
+
+# Limpia la cache de npm 
+[linux]
+clean-npm:
+	rm -rf ~/.npm/
 
